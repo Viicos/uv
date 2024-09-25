@@ -2717,7 +2717,7 @@ dependencies = [
  "indoc",
  "libc",
  "memoffset 0.9.1",
- "parking_lot 0.11.2",
+ "parking_lot 0.12.3",
  "portable-atomic",
  "pyo3-build-config",
  "pyo3-ffi",
@@ -3679,6 +3679,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "spdx"
+version = "0.10.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "47317bbaf63785b53861e1ae2d11b80d6b624211d42cb20efcd210ee6f8a14bc"
+dependencies = [
+ "smallvec",
+]
+
+[[package]]
 name = "spin"
 version = "0.9.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4484,6 +4493,7 @@ dependencies = [
  "unicode-width",
  "url",
  "uv-auth",
+ "uv-build-backend",
  "uv-cache",
  "uv-cache-info",
  "uv-cli",
@@ -4537,6 +4547,35 @@ dependencies = [
  "url",
  "urlencoding",
  "wiremock",
+]
+
+[[package]]
+name = "uv-build-backend"
+version = "0.1.0"
+dependencies = [
+ "async_zip",
+ "distribution-filename",
+ "fs-err",
+ "glob",
+ "indoc",
+ "insta",
+ "itertools 0.13.0",
+ "pep440_rs",
+ "pep508_rs",
+ "pypi-types",
+ "serde",
+ "spdx",
+ "tempfile",
+ "thiserror",
+ "tokio",
+ "tokio-util",
+ "toml",
+ "tracing",
+ "uv-fs",
+ "uv-normalize",
+ "uv-pubgrub",
+ "uv-version",
+ "uv-warnings",
 ]
 
 [[package]]
@@ -5549,7 +5588,7 @@ version = "0.1.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cf221c93e13a30d793f7645a0e7762c55d169dbb0a49671918a2319d289b10bb"
 dependencies = [
- "windows-sys 0.48.0",
+ "windows-sys 0.59.0",
 ]
 
 [[package]]
