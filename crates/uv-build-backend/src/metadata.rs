@@ -887,9 +887,9 @@ mod tests {
             .to_metadata(Path::new("/do/not/read"))
             .await
             .unwrap_err();
-        assert_snapshot!(format_err(err).replace('\\', "/"), @r###"
+        // Simplified for windows compatibility.
+        assert_snapshot!(err.to_string().replace('\\', "/"), @r###"
         failed to read from file `/do/not/read/Readme.md`
-          Caused by: No such file or directory (os error 2)
         "###);
     }
 
