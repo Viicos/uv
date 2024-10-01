@@ -36,25 +36,34 @@ pub struct Metadata23 {
     /// assist searching for the distribution in a larger catalog.
     pub keywords: Option<String>,
     /// A string containing the URL for the distribution's home page.
+    ///
+    /// Deprecated by PEP 753.
     pub home_page: Option<String>,
     /// A string containing the URL from which this version of the distribution can be downloaded.
-    pub download_url: Option<String>,
-    /// A string containing the author's name at a minimum; additional contact information may be provided.
-    pub author: Option<String>,
-    /// A string containing the author's e-mail address. It can contain a name and e-mail address in the legal forms for a RFC-822 `From:` header.
-    pub author_email: Option<String>,
-    /// A string containing the maintainer's name at a minimum; additional contact information may be provided.
     ///
-    /// Note that this field is intended for use when a project is being maintained by someone other than the original author:
+    /// Deprecated by PEP 753.
+    pub download_url: Option<String>,
+    /// A string containing the author's name at a minimum; additional contact information may be
+    /// provided.
+    pub author: Option<String>,
+    /// A string containing the author's e-mail address. It can contain a name and e-mail address in
+    /// the legal forms for an RFC-822 `From:` header.
+    pub author_email: Option<String>,
+    /// A string containing the maintainer's name at a minimum; additional contact information may
+    /// be provided.
+    ///
+    /// Note that this field is intended for use when a project is being maintained by someone other
+    /// than the original author:
     /// it should be omitted if it is identical to `author`.
     pub maintainer: Option<String>,
     /// A string containing the maintainer's e-mail address.
     /// It can contain a name and e-mail address in the legal forms for a RFC-822 `From:` header.
     ///
-    /// Note that this field is intended for use when a project is being maintained by someone other than the original author:
-    /// it should be omitted if it is identical to `author_email`.
+    /// Note that this field is intended for use when a project is being maintained by someone other
+    /// than the original author: it should be omitted if it is identical to `author_email`.
     pub maintainer_email: Option<String>,
-    /// Text indicating the license covering the distribution where the license is not a selection from the `License` Trove classifiers or an SPDX license expression.
+    /// Text indicating the license covering the distribution where the license is not a selection
+    /// from the `License` Trove classifiers or an SPDX license expression.
     pub license: Option<String>,
     /// An SPDX expression indicating the license covering the distribution.
     ///
@@ -66,21 +75,28 @@ pub struct Metadata23 {
     pub license_files: Vec<String>,
     /// Each entry is a string giving a single classification value for the distribution.
     pub classifiers: Vec<String>,
-    /// Each entry contains a string naming some other distutils project required by this distribution.
+    /// Each entry contains a string naming some other distutils project required by this
+    /// distribution.
     pub requires_dist: Vec<String>,
-    /// Each entry contains a string naming a Distutils project which is contained within this distribution.
+    /// Each entry contains a string naming a Distutils project which is contained within this
+    /// distribution.
     pub provides_dist: Vec<String>,
-    /// Each entry contains a string describing a distutils project's distribution which this distribution renders obsolete,
+    /// Each entry contains a string describing a distutils project's distribution which this
+    /// distribution renders obsolete,
     /// meaning that the two projects should not be installed at the same time.
     pub obsoletes_dist: Vec<String>,
-    /// This field specifies the Python version(s) that the distribution is guaranteed to be compatible with.
+    /// This field specifies the Python version(s) that the distribution is guaranteed to be
+    /// compatible with.
     pub requires_python: Option<String>,
-    /// Each entry contains a string describing some dependency in the system that the distribution is to be used.
+    /// Each entry contains a string describing some dependency in the system that the distribution
+    /// is to be used.
     pub requires_external: Vec<String>,
-    /// A string containing a browsable URL for the project and a label for it, separated by a comma.
+    /// A string containing a browsable URL for the project and a label for it, separated by a
+    /// comma.
     pub project_urls: Vec<String>,
     /// A string containing the name of an optional feature. Must be a valid Python identifier.
-    /// May be used to make a dependency conditional on whether the optional feature has been requested.
+    /// May be used to make a dependency conditional on whether the optional feature has been
+    /// requested.
     pub provides_extras: Vec<String>,
     /// A string containing the name of another core metadata field.
     pub dynamic: Vec<String>,
